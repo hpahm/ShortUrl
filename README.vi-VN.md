@@ -104,7 +104,3 @@ Mỗi link có dạng: `{ urlCode, shortUrl, originalUrl, clicks, createdAt, exp
 - Không có tài khoản: trình duyệt được cấp một cookie ẩn danh. Xóa cookie hoặc dùng trình duyệt khác thì sẽ không thấy lại lịch sử (link vẫn hoạt động).
 - Khi tắt server bằng Ctrl+C, các lượt click chưa ghi sẽ được lưu trước khi thoát. Nếu server bị tắt đột ngột, có thể mất tối đa 1 giây lượt click.
 - Sao lưu: copy file trong thư mục `data/`.
-
-## License
-
-ISC
