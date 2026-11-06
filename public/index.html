@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rút Gọn Link</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 data-i18n="title">Rút Gọn Link</h1>
+      <div class="lang-switch">
+        <button type="button" data-lang="vi" class="lang-btn active">VI</button>
+        <button type="button" data-lang="en" class="lang-btn">EN</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2 data-i18n="create_title">Tạo link ngắn</h2>
+        <form id="urlForm">
+          <div class="form-group">
+            <input type="url" id="originalUrl" data-i18n-placeholder="url_placeholder" placeholder="Dán link vào đây" maxlength="2048" required>
+            <button type="submit" class="btn-primary" data-i18n="shorten">Rút gọn</button>
+          </div>
+          <div class="options">
+            <label>
+              <span data-i18n="custom_code">Mã tùy chỉnh (không bắt buộc)</span>
+              <input type="text" id="customCode" data-i18n-placeholder="custom_placeholder" placeholder="vd: k-m" pattern="[A-Za-z0-9_\-]{3,32}" maxlength="32"
+                data-i18n-title="custom_title" title="3–32 ký tự: chữ, số, - và _">
+            </label>
+            <label>
+              <span data-i18n="expires">Hết hạn sau</span>
+              <select id="expiresInDays">
+                <option value="" data-i18n="never">Không bao giờ</option>
+                <option value="1" data-i18n="day_1">1 ngày</option>
+                <option value="7" data-i18n="day_7">7 ngày</option>
+                <option value="30" data-i18n="day_30">30 ngày</option>
+                <option value="365" data-i18n="year_1">1 năm</option>
+              </select>
+            </label>
+          </div>
+        </form>
+
+        <div id="error" class="error hidden"></div>
+
+        <div id="result" class="result hidden">
+          <div class="result-content">
+            <label data-i18n="your_short_link">Link rút gọn của bạn:</label>
+            <div class="url-display">
+              <a id="shortUrl" href="#" target="_blank" rel="noopener"></a>
+              <button id="copyBtn" type="button" class="btn-copy" data-i18n-title="copy_title" title="Sao chép">📋</button>
+            </div>
+            <img id="resultQr" class="qr" data-i18n-alt="qr_alt" alt="Mã QR của link rút gọn" width="160" height="160">
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="history-header">
+          <h2 data-i18n="history">Lịch sử</h2>
+          <button id="refreshBtn" type="button" class="btn-small" data-i18n="refresh">Làm mới</button>
+        </div>
+        <div id="urlList" class="url-list"><p class="loading" data-i18n="loading">Đang tải...</p></div>
+        <button id="moreBtn" type="button" class="btn-small btn-more hidden" data-i18n="load_more">Tải thêm</button>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

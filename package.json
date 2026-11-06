@@ -1,0 +1,32 @@
+{
+  "name": "url-shortener",
+  "version": "2.0.0",
+  "description": "Fast, low-memory URL shortener with click tracking (Express + SQLite)",
+  "main": "server.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node --max-old-space-size=128 server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test",
+    "bench": "node scripts/bench.js"
+  },
+  "keywords": [
+    "url",
+    "shortener",
+    "link"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "dotenv": "^18.0.9",
+    "express": "^4.22.3",
+    "express-rate-limit": "^8.7.3",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "autocannon": "^8.0.0"
+  }
+}
